@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/channelListFragment">
+
+    <fragment
+        android:id="@+id/channelListFragment"
+        android:name="com.example.youtubeplayer.channelList.ChannelListFragment"
+        android:label="ChannelListFragment">
+        <action
+            android:id="@+id/action_channelListFragment_to_channelFragment"
+            app:destination="@id/channelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/channelFragment"
+        android:name="com.example.youtubeplayer.channel.ChannelFragment"
+        android:label="ChannelFragment">
+        <argument
+            android:name="selectedChannel"
+            app:argType="com.example.youtubeplayer.model.YoutubeResult" />
+        <action
+            android:id="@+id/action_channelFragment_to_videoDisplayFragment"
+            app:destination="@id/videoDisplayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDisplayFragment"
+        android:name="com.example.youtubeplayer.videoDisplay.VideoDisplayFragment"
+        android:label="VideoDisplayFragment">
+        <argument
+            android:name="selectedVideo"
+            app:argType="com.example.youtubeplayer.model.videosResultModel.Item"/>
+    </fragment>
+
+
+</navigation>
