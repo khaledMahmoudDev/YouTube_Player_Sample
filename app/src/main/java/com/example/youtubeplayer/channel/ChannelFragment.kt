@@ -1,5 +1,6 @@
 package com.example.youtubeplayer.channel
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.findNavController
 import com.example.youtubeplayer.databinding.FragmentChannelDisplayBinding
-import com.example.youtubeplayer.videoDisplay.VideoDisplayFragment
+import com.example.youtubeplayer.videoDisplay.VideoDisplayActivity
 
 class ChannelFragment : Fragment() {
     override fun onCreateView(
@@ -35,9 +35,10 @@ class ChannelFragment : Fragment() {
             })
 
         viewModel.navigateToSelectedVideo.observe(viewLifecycleOwner, Observer {
-            if (null != it)
-            {
-                this.findNavController().navigate(ChannelFragmentDirections.actionChannelFragmentToVideoDisplayFragment(it))
+            if (null != it) {
+                val intent = Intent(activity, VideoDisplayActivity::class.java)
+                intent.putExtra("selectedVideo", it)
+                startActivity(intent)
                 viewModel.compeletSelectingVideo()
             }
         })

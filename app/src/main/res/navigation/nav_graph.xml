@@ -19,17 +19,6 @@
         <argument
             android:name="selectedChannel"
             app:argType="com.example.youtubeplayer.model.YoutubeResult" />
-        <action
-            android:id="@+id/action_channelFragment_to_videoDisplayFragment"
-            app:destination="@id/videoDisplayFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/videoDisplayFragment"
-        android:name="com.example.youtubeplayer.videoDisplay.VideoDisplayFragment"
-        android:label="VideoDisplayFragment">
-        <argument
-            android:name="selectedVideo"
-            app:argType="com.example.youtubeplayer.model.videosResultModel.Item"/>
     </fragment>
 
 

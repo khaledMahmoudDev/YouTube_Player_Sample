@@ -15,9 +15,9 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.35" />
 
-        <fragment
+        <view
             android:id="@+id/youtubeViewPlayer"
-            android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
+            class="com.google.android.youtube.player.YouTubePlayerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
